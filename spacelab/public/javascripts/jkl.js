@@ -56,19 +56,4 @@ window.onload = () => {
 
   console.log("here first");
   bouncy(x_max, r_max);
-
-  getWikiData().then((data) => {
-    console.log(data);
-  })
 };
-
-const getWikiData = () => {
-  return new Promise((resolve, reject) => {
-    let xhr = new XMLHttpRequest();
-    let url = '/jkldata'
-    xhr.open("GET", url);
-    xhr.onload = () => resolve(JSON.parse(xhr.responseText));
-    xhr.onerror = () => reject(xhr.statusText);
-    xhr.send();
-  });
-}

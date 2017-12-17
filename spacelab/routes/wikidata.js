@@ -27,4 +27,27 @@ router.get('/', function(req, res, next) {
     })
 });
 
+const createWikiMap = () => {
+  let width = 720,
+      height = 180;
+
+  const chart = (selection, data) => {
+
+  }
+
+  chart.width = (val) => {
+    if(!arguments.length) return width;
+    width = val;
+    return chart;
+  }
+
+  chart.height = (val) => {
+    if (!arguments.length) return height;
+    height = value;
+    return chart;
+  }
+
+  return chart;
+}
+
 module.exports = router;
