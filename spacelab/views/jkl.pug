@@ -1,0 +1,20 @@
+extends layout
+
+block title
+  div#title-wrapper
+    h1#title= title
+    svg#bouncyContainer
+
+block content
+  script(src='/javascripts/d3.min.js')
+  script(src='/javascripts/jkl.js')
+  p 
+    | JKL stands for Jade and Kent's Lines
+    br
+    | JKL is for drawing lines through an oblate spheroid
+    br
+    | JKL is also fun to type, since the keys 'J', 'K', and 'L' are adjacent
+    br
+    | JKL is love, JKL is life
+    
+  svg#jkl

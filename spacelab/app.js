@@ -7,6 +7,11 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var about = require('./routes/about');
+var ideas = require('./routes/ideas');
+var projects = require('./routes/projects');
+var jkl = require('./routes/jkl');
+var jkldata = require('./routes/jkldata');
 
 var app = express();
 
@@ -24,6 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/about', about);
+app.use('/ideas', ideas);
+app.use('/jkl', jkl);
+app.use('/jkldata', jkldata);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,3 +53,20 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+process.on('SIGINT', () => {
+  console.log("Interrupt caught");
+  process.exit();
+});
+
+if(process.platform === 'win32') {
+  var rl = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  // Kill the damn thing! Nuke 'em, Rico!
+  rl.on('line', () => {
+    process.exit();
+  });
+}

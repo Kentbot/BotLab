@@ -1,5 +1,9 @@
 extends layout
 
+block title
+  div#title-wrapper
+    h1#title= title
+
 block content
-  h1= title
-  p Welcome to #{title}
+  #content
+    p Hi there, this is conentment

@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+a {
+
+}
+
+p {
+  margin: 24px;
+  font-family: sans-serif;
+}
+
+#title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#title {
+  flex: auto;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 30%;
+}
+
+#bouncyContainer {
+  flex: auto;
+  width: 70%
+}
