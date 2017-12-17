@@ -1,0 +1,17 @@
+extends layout
+
+block title
+  div#title-wrapper
+    h1#title= title
+    svg#bouncyContainer
+
+block content
+  script(src='/javascripts/d3.min.js')
+  script(src='/javascripts/bouncyBall.js')
+  script(src='/javascripts/wikimap.js')
+  p 
+    | A Map about Wikipedia
+    br
+    | Made possible by your charitable contributions to WikiMedia corp. LLC.
+    
+  svg#jkl
