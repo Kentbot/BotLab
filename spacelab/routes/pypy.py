@@ -40,7 +40,7 @@ links = []
 
 for page in link_pages:
     for link_obj in data[page]['links']:
-        obj = {'source': base_title, 'target', link_obj['title']}
+        obj = {'source': base_title, 'target': link_obj['title']}
         links.append(obj)
 
 data = {}
