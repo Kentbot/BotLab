@@ -40,11 +40,10 @@ links = []
 
 for page in link_pages:
     for link_obj in data[page]['links']:
-        obj = {'source': base_title, 'target': link_obj['title']}
+        obj = {"page": link_obj["title"], "links": []}
         links.append(obj)
 
 data = {}
-data['nodes'] = [ { 'page': base_title } ]
-data['links'] = links
-print(data)
+data["page"] = base_title
+data["links"] = links
 print(json.dumps(data))
