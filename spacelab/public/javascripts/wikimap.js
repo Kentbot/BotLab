@@ -32,7 +32,7 @@ const getWikiData = () => {
       .enter().append('path')
         .attr('class', 'link')
         .attr('d', d3.linkHorizontal()
-          .x((d) => { return d.y; })
+          .x((d) => { console.log(d); return d.y; })
           .y((d) => { return d.x; }));
 
     let node = g.selectAll('.node')
@@ -46,6 +46,6 @@ const getWikiData = () => {
       .attr('dy', 3)
       .attr('x', (d) => { return d.children ? -8 : 8; })
       .style('text-anchor', (d) => { return d.children ? 'end' : 'start'; })
-      .text((d) => { console.log(d); return d.data.page; });
+      .text((d) => { return d.data.page; });
   });
 // }
