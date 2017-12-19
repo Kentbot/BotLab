@@ -19,10 +19,11 @@ const getWikiData = () => {
   let g = svg.append('g').attr('transform', 'translate(40, 0)');
 
   let tree = d3.tree().size([height, width - 160]);
+  let root;
 
   getWikiData().then((data) => {
     data = JSON.parse(data);
-    let root = d3.hierarchy(data, (d) => {
+    root = d3.hierarchy(data, (d) => {
       return d.links;
     });
 
@@ -45,7 +46,6 @@ const getWikiData = () => {
       .attr('dy', 3)
       .attr('x', (d) => { return d.children ? -8 : 8; })
       .style('text-anchor', (d) => { return d.children ? 'end' : 'start'; })
-      .text((d) => { return d.parent; });
-    console.log(node);
+      .text((d) => { console.log(d); return d.data.page; });
   });
 // }
