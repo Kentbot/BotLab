@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+# sass auto-generated files
+.sass-cache
+*.sass-cache

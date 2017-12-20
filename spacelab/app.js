@@ -9,9 +9,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var ideas = require('./routes/ideas');
-var projects = require('./routes/projects');
 var jkl = require('./routes/jkl');
-var jkldata = require('./routes/jkldata');
+var wikidata = require('./routes/wikidata');
+var wikimap = require('./routes/wikimap');
 
 var app = express();
 
@@ -32,7 +32,8 @@ app.use('/users', users);
 app.use('/about', about);
 app.use('/ideas', ideas);
 app.use('/jkl', jkl);
-app.use('/jkldata', jkldata);
+app.use('/wikimap', wikimap);
+app.use('/wikidata', wikidata);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
