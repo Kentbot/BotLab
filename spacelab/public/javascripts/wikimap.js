@@ -14,11 +14,16 @@ const getWikiData = () => {
 // window.onload = () => {
   let treeData;
   let width = 960;
-  let height = 1060;
-  let svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
-  let g = svg.append('g').attr('transform', 'translate(40, 0)');
+  let height = 800;
+  let svg = d3.select('body')
+    .append('svg')
+    .attr('width', window.innerWidth)
+    .attr('height', window.innerHeight)
+    .attr('style', 'display:block; margin:auto;');
+  let g = svg.append('g')
+    .attr('transform', 'translate(100, 0)');
 
-  let tree = d3.tree().size([height, width - 160]);
+  let tree = d3.tree().size([height - 300, width - 360]);
   let root;
 
   getWikiData().then((data) => {
@@ -32,20 +37,35 @@ const getWikiData = () => {
       .enter().append('path')
         .attr('class', 'link')
         .attr('d', d3.linkHorizontal()
-          .x((d) => { console.log(d); return d.y; })
+          .x((d) => { return d.y; })
           .y((d) => { return d.x; }));
 
     let node = g.selectAll('.node')
       .data(root.descendants())
       .enter().append('g')
         .attr('class', (d) => { return `node ${d.children ? ' node--internal' : ' node--leaf'}`; })
-        .attr('transform', (d) => { return `translate(${d.y}, ${d.x})`});
+        .attr('id', (d) => { return `${d.depth === 0 ? 'root' : null}`})
+        .attr('transform', (d) => {
+          return `translate(${d.y}, ${d.x})`
+        });
 
-    node.append('circle').attr('r', 2.5);
+    g.selectAll('#null')
+      .attr('id', null);
+
+    node.append('circle').attr('r', 2.5)
+      .on('click', (d, i) => {
+
+      });
     node.append('text')
       .attr('dy', 3)
-      .attr('x', (d) => { return d.children ? -8 : 8; })
+      .attr('x', (d) => {
+        return d.children ? -8 : 8;
+      })
+      .attr('href', (d) => { return d.data.page })
       .style('text-anchor', (d) => { return d.children ? 'end' : 'start'; })
       .text((d) => { return d.data.page; });
+
+    g.attr('transform', `translate(${d3.select('#root').node().getBoundingClientRect().width}, 0)`)
+
   });
 // }
