@@ -60,3 +60,6 @@ typings/
 # sass auto-generated files
 .sass-cache
 *.sass-cache
+
+# babel-compiled files
+public

@@ -1,0 +1,16 @@
+.node circle {
+  fill: #999; }
+.node text {
+  font: 10px sans-sairf; }
+
+.node--internal circle {
+  fill: #555; }
+.node--internal text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff; }
+
+.link {
+  fill: none;
+  stroke: #555;
+  stroke-width: 1.5px; }
+
+/*# sourceMappingURL=wikimap.css.map */
