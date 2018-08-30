@@ -61,5 +61,8 @@ typings/
 .sass-cache
 *.sass-cache
 
-# babel-compiled files
+# browserified files
 public
+
+# babel-compiled files
+babel
