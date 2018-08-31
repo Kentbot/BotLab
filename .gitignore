@@ -69,3 +69,6 @@ babel
 
 # vscode workspace files
 *.code-workspace
+
+# vscode settings
+.vscode
