@@ -66,3 +66,6 @@ public
 
 # babel-compiled files
 babel
+
+# vscode workspace files
+*.code-workspace
