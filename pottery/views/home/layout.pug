@@ -1,17 +1,21 @@
 doctype html
 html
-  head
-    link(rel='stylesheet', href='/stylesheets/main.css')
-  body
+    head
+        link(rel='stylesheet', href='/stylesheets/main.css')
     body
-    block navbar
-    ul.navbar
-      li.navbutton#home
-        a(href='/') Home
-      li.navbutton#about 
-        a(href='/about') About
-      li.navbutton#projects 
-        a(href='#') Projects
-    block title
-    block content
-    block footer
+        mixin navbar(activeTab)
+            nav
+                .nav-wrapper
+                    a(href='#').nav-logo.brand-logo.right logo
+                    ul#nav-mobile.left.hide-on-med-and-down
+                        li(class!=(activeTab==='home'?'active':''))#home
+                            a(href='/') Home
+                        li(class!=(activeTab==='about'?'active':''))#about 
+                            a(href='/about') About
+                        li(class!=(activeTab==='projects'?'active':''))#projects 
+                            a(href='/projects') Projects
+
+        block navbar
+        block title
+        block content
+        block footer

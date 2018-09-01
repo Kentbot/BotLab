@@ -1,0 +1,10 @@
+extends layout
+
+block navbar
+    +navbar('projects')
+
+block content
+    #content This is projects
+    #images 
+        each i in images
+            p=i
