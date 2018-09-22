@@ -60,3 +60,15 @@ typings/
 # sass auto-generated files
 .sass-cache
 *.sass-cache
+
+# browserified files
+public
+
+# babel-compiled files
+babel
+
+# vscode workspace files
+*.code-workspace
+
+# vscode settings
+.vscode

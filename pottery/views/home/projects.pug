@@ -1,0 +1,18 @@
+extends layout
+
+block navbar
+    +navbar('projects')
+
+block content
+    mixin addImgText(imgText)
+        .img-text=imgText
+
+    mixin makeImgDiv(image)
+        .img-container
+            img(src='images/'+image width='400px' height='400px')
+            +addImgText('Test 123')
+
+    #content This is projects
+    #images
+        each img in images
+            +makeImgDiv(img)

@@ -30,7 +30,7 @@ pageData = request.urlopen(url).read().decode('utf-8')
 data = json.loads(str(pageData))
 base_title = data['query']['random'][0]['title']
 
-url = getPageLinks(25, 'article', base_title)
+url = getPageLinks(100, 'article', base_title)
 pageData = request.urlopen(url).read().decode('utf-8')
 data = json.loads(str(pageData))
 

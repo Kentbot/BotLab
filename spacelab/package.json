@@ -3,17 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "babel dev --out-dir public --ignore d3.min.js,./dev/sass --copy-files",
     "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.15.5",
+    "d3": "^4.12.2",
+    "debug": "~3.1.0",
+    "express": "~4.16.2",
     "jquery": "^3.2.1",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11",
+    "pug": "2.0.0-rc.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "sass": "^1.0.0-beta.4",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "watchify": "^3.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
   }
 }

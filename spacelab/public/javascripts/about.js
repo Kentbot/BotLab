@@ -1,3 +1,5 @@
-$(() => {
-  $("#content").css({'color': 'blue'});
+'use strict';
+
+$(function () {
+  $("#content").css({ 'color': 'blue' });
 });
