@@ -5,6 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://192.168.0.75:27017/test');
+
+const cat = mongoose.model('Cat', {name: String}, 'test');
+
+const kitty = new cat({name: 'Zildy'});
+kitty.save().then(() => console.log('meow'));
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 

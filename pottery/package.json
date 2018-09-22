@@ -11,6 +11,7 @@
     "debug": "~2.6.9",
     "express": "^4.16.3",
     "materialize-css": "^1.0.0-rc.2",
+    "mongoose": "^5.2.13",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "sass": "^1.13.0",
